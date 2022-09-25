@@ -1,10 +1,8 @@
 const express = require('express');
-
 const app = express();
-
-const notes = require('./db/db.json');
-
+const { uid } = require('uid');
 const path = require('path');
+let notes = require('./db/db.json');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -30,11 +28,16 @@ app.get('/api/notes', (req, res) => {
 app.post('/api/notes', (req, res) => {
     let newNote = {
         title: req.body.title,
-        text: req.body.text
+        text: req.body.text,
+        id: uid()
     }
-
     notes.push(newNote);
     res.json(200);
+});
+
+app.delete('/api/notes/:id', (req, res) => {
+    notes = notes.filter(note => note.id !== req.params.id)
+    res.json(notes)
 });
 
 
