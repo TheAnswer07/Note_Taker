@@ -32,8 +32,10 @@ app.post('/api/notes', (req, res) => {
         title: req.body.title,
         text: req.body.text
     }
-});
 
+    notes.push(newNote);
+    res.json(200);
+});
 
 
 
