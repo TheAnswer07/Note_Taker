@@ -12,11 +12,11 @@
 * [Features](#features)
 * [Contribution](#contribution)
 * [GitHub Profile Link](#github-profile)
-* [GitHub App Link](#links)
+* [Heroku App Link](#links)
 * [Screenshots:](#screenshots)
-    1. [x](#x)
-    2. [y](#y)
-    3. [z](#z)
+    1. [Note being added to application](#Note-being-added-to-application)
+    2. [Note successfully added to application](#Note-successfully-added-to-application)
+    3. [Application with 2 deleted notes](#Application-with-2-deleted-notes)
 
 
 
@@ -34,7 +34,7 @@ Thanks to Michael Scharfas (2017mike) for all the considerable support connected
 
 ### Features:
 
-X
+Different sections to add tittle for individual notes as well as the notes themselves | Option to save and/or delete notes.
 
 ### Contribution:
 You can contribute to this project by accessing my GitHub page.
@@ -43,18 +43,18 @@ You can contribute to this project by accessing my GitHub page.
 [GitHub](https://github.com/TheAnswer07)
 
 ### Links:
-[GitHub App Link](https://note-taker-md.herokuapp.com/)
+[Heroku App Link](https://note-taker-md.herokuapp.com/)
 
 ### Screenshots:
 
-1. X
+1. Note being added to application:
 
-![x]( "x")
+![Note being added to application](public/assets/screenshots/Note%20being%20added%20to%20application.png "Note being added to application")
 
-2. Y
+2. Note successfully added to application:
 
-![y]( "y")
+![Note successfully added to application](public/assets/screenshots/Note%20successfully%20added%20to%20application.png "Note successfully added to application")
 
-3. Z
+3. Application with 2 deleted notes:
 
-![z]( "z")
+![Application with 2 deleted notes](public/assets/screenshots/Application%20with%202%20deleted%20notes.png "Application with 2 deleted notes")
