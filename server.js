@@ -3,7 +3,7 @@ const app = express();
 const { uid } = require('uid');
 const path = require('path');
 let notes = require('./db/db.json');
-const { fstat } = require('fs');
+const fs = require('fs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -46,8 +46,6 @@ app.delete('/api/notes/:id', (req, res) => {
         res.sendStatus(200)
     });
 });
-
-
 
 
 app.listen(process.env.PORT || 3000);
