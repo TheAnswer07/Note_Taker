@@ -3,6 +3,7 @@ const app = express();
 const { uid } = require('uid');
 const path = require('path');
 let notes = require('./db/db.json');
+const { fstat } = require('fs');
 
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({ extended: true }));
@@ -32,12 +33,18 @@ app.post('/api/notes', (req, res) => {
         id: uid()
     }
     notes.push(newNote);
-    res.json(200);
+    fs.writeFile(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+      if (err) { console.log(err) }
+      res.json(newNote)
+    });
 });
 
 app.delete('/api/notes/:id', (req, res) => {
     notes = notes.filter(note => note.id !== req.params.id)
-    res.json(notes)
+    fs.writeFile(path.join(__dirname, 'db', 'db.json'), JSON.stringify(notes), err => {
+        if (err) { console.log(err) }
+        res.sendStatus(200)
+    });
 });
 
 
